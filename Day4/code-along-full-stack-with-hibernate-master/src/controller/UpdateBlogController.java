@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.BlogDAO;
+
 import model.Blog;
 
 @WebServlet(urlPatterns = {"/update"})
@@ -21,14 +22,14 @@ public class UpdateBlogController extends HttpServlet {
 
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//		System.out.println("Entering Update Blog");
-//		System.out.println("Entering do post");
+		System.out.println("Entering Update Blog");
+		System.out.println("Entering do post");
 		int blogId = Integer.parseInt(request.getParameter("blogId"));
-//		System.out.println(blogId);
+		System.out.println(blogId);
 		String blogTitle = request.getParameter("title");
 		String blogDescription = request.getParameter("message");
 		LocalDate postedOn = LocalDate.now();
-//		System.out.println(blogTitle);
+		System.out.println(blogTitle);
 		Blog blog = new Blog();
 		blog.setBlogId(blogId);
 		blog.setBlogTitle(blogTitle);

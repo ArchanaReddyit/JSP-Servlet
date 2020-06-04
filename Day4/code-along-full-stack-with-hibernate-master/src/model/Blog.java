@@ -18,9 +18,9 @@ public class Blog {
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_blog")
 	@SequenceGenerator(name = "seq_blog", sequenceName = "seq_blog", allocationSize = 1, initialValue = 1)
 	private int blogId;
-	@Column(name="BLOGTITLE")
+	@Column(name="BLOGNAME")
 	private String blogTitle;
-	@Column(name="BLOGDESCRIPTION")
+	@Column(name="BLOGDISCRIPTION")
 	private String blogDescription;
 	@Column(name="POSTEDON")
 	private LocalDate postedOn;

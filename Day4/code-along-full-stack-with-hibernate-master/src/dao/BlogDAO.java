@@ -4,6 +4,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
@@ -15,7 +16,7 @@ import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
 import model.Blog;
-
+import oracle.net.aso.q;
 import utility.HibernateConnectionManager;
 
 public class BlogDAO implements BlogDaoInterface{
@@ -23,7 +24,7 @@ public class BlogDAO implements BlogDaoInterface{
 	@Override
 	public void insertBlog(Blog blog) throws SQLException {
 		Session session = this.sessionFactory.openSession();
-		org.hibernate.Transaction transaction = session.beginTransaction();
+		Transaction transaction = session.beginTransaction();
 		session.save(blog);
 		transaction.commit();
 		session.close();
@@ -47,6 +48,7 @@ public class BlogDAO implements BlogDaoInterface{
 		  Root<Blog> root = query.from(Blog.class);
 		  query.select(root);
 		  Query<Blog> q=session.createQuery(query);
+		//Criteria cr = session.createCriteria(Blog.class);
 		 List<Blog> listBlog = q.getResultList();
 		return listBlog;
 	}

@@ -12,13 +12,14 @@ import javax.servlet.http.HttpServletResponse;
 import dao.BlogDAO;
 
 
+
 @WebServlet("/delete")
 public class DeleteBlogController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//System.out.println("Delete Blog");
+		System.out.println("Delete Blog");
 		try {
 			deleteBlog(request, response);
 		} catch (SQLException e) {
